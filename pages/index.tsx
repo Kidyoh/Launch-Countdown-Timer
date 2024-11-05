@@ -4,11 +4,10 @@ import { useEffect, useState } from 'react'
 import { TimerContainer } from '../components/TimerContainer'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
-import { TimerInput } from '../components/TimerInput'
 
 const Home: NextPage = () => {
 
-  const [time, setTime] = useState<number>(7);
+  const [time, setTime] = useState<number>(3);
   const [newTime, setNewTime] = useState<number>(0)
   const [days, setDays] = useState<number>(0);
   const [hours, setHours] = useState<number>(0);
@@ -42,7 +41,7 @@ const Home: NextPage = () => {
 
       if (difference <= 0) {
         clearInterval(updateTime);
-        setMessage("The Launch Has Started");
+        setMessage("Only A Few Days Left My Darling");
         setDays(0);
         setHours(0);
         setMinutes(0);
@@ -85,8 +84,6 @@ const Home: NextPage = () => {
         minutes={minutes}
         seconds={seconds}
       />
-      <TimerInput value={newTime} handleClick={handleClick} handleChange={handleChange} />
-
       <Footer />
     </div>
   )
